@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dealership Review</title>
-    {% load static %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
-
-    <body>
-
-    <!--Add a nav bar here -->
-
-    <!-- Add reviews as cards -->
-
-    </body>
-
-</html>
+{% for review in reviews %}
+    <h3>{{ review.name }}</h3>
+    <p>{{ review.review }}</p>
+    <p>Date: {{ review.purchase_date }}</p>
+    <p>Sentiment: {{ review.sentiment }}</p>
+{% endfor %}
