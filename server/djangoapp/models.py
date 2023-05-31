@@ -65,19 +65,3 @@ class DealerReview:
         self.sentiment = sentiment
         self.id = id
 
-
-# class DealerReview(models.Model):
-#     dealership = models.CharField(max_length=30)
-#     name = models.CharField(max_length=30)
-#     purchase = models.BooleanField()
-#     review = models.TextField()
-#     purchase_date = models.DateField()
-#     car_make = models.CharField(max_length=30)
-#     car_model = models.CharField(max_length=30)
-#     car_year = models.IntegerField()
-#     sentiment = models.CharField(max_length=30)
-#     id = models.AutoField(primary_key=True)
-
-#     def __str__(self):
-#         return self.name
-

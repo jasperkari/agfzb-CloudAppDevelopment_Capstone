@@ -44,11 +44,35 @@
                     <a href="{% url 'djangoapp:registration' %}" class="btn btn-secondary">Sign up</a>
                 </form> 
             {% endif %}                      
-        </nav>
-          
-
-    <!--Add a dealer table here -->
-
+        </nav> 
+        <table class="table" id="table" data-filter-control="true">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Dealer Name</th>
+              <th>City</th>
+              <th>Address</th>
+              <th>Zip</th>
+              <th data-field="state" data-filter-control="select">State</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for dealer in Dealerships %}
+              <tr>
+                <td>{{dealer.id}}</td>
+                <td><a href="{% url 'djangoapp:dealer_details' dealer.id %}">{{dealer.full_name}}</a></td>
+                <td>{{dealer.city}}</td>
+                <td>{{dealer.address}}</td>
+                <td>{{dealer.zip}}</td>
+                <td>{{dealer.state}}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <script>
+            $(function() {
+              $('#table').bootstrapTable()
+            })
+        </script>
     </body>
-
 </html>
